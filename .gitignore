@@ -1,0 +1,30 @@
+# Secrets: never commit these
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+
+# Dependencies and builds
+node_modules/
+dist/
+build/
+out/
+.next/
+target/
+__pycache__/
+*.pyc
+.venv/
+venv/
+
+# Contracts tooling
+cache/
+broadcast/*/31337/
+artifacts/
+
+# OS and editors
+.DS_Store
+.idea/
+.vscode/*
+!.vscode/extensions.json
+*.log

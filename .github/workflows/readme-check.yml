@@ -1,0 +1,19 @@
+name: README check
+
+# Runs in your fork once you enable Actions there (Actions tab > "I understand
+# my workflows, go ahead and enable them"). Skipped on the template itself,
+# whose README is meant to be full of placeholders.
+on:
+  push:
+    paths: [README.md]
+  pull_request:
+    paths: [README.md]
+  workflow_dispatch:
+
+jobs:
+  check:
+    if: github.repository != 'Team1-Turkiye/hackathon-template'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - run: ./scripts/check-readme.sh README.md
